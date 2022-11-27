@@ -20,11 +20,11 @@ sadmona_encoding = face_recognition.face_encodings(sadmona_image)[0]
 kaushal_image = face_recognition.load_image_file("photos/kaushal.jpg")
 kaushal_encoding = face_recognition.face_encodings(kaushal_image)[0]
 
-sreedevi_image = face_recognition.load_image_file("photos/sreedevi.jpg")
-sreedevi_encoding = face_recognition.face_encodings(sreedevi_image)[0]
+# sreedevi_image = face_recognition.load_image_file("photos/sreedevi.jpg")
+# sreedevi_encoding = face_recognition.face_encodings(sreedevi_image)[0]
 
-sahasra_image = face_recognition.load_image_file("photos/sahasra2.jpg")
-sahasra_encoding = face_recognition.face_encodings(sahasra_image)[0]
+# sahasra_image = face_recognition.load_image_file("photos/sahasra2.jpg")
+# sahasra_encoding = face_recognition.face_encodings(sahasra_image)[0]
 
 
 
