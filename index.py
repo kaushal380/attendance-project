@@ -86,7 +86,7 @@ while True:
                     students.remove(name)
                     print(students)
                     current_time = now.strftime("%H - %M - %S")
-                    lnwriter.writerow([name, current_time])
+                    lnwriter.writerow([name, current_time, current_date])
     cv2.imshow("attendence system", frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
