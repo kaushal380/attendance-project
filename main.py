@@ -6,28 +6,50 @@ import os
 import glob
 from datetime import datetime
 
-
 video_capture = cv2.VideoCapture(0)
-directory = os.fsencode("photos")
 
-known_face_encoding = []
-known_face_names = []
+jobs_image = face_recognition.load_image_file("photos/jobs.jpg")
+jobs_encoding = face_recognition.face_encodings(jobs_image)[0]
 
-for file in os.listdir(directory):
-     
-     filename = os.fsdecode(file)
-     if filename.endswith(".jpg") or filename.endswith(".jpeg"):
-        ff_list = filename.split(".")
-        print(ff_list)
-        foldername = os.fsdecode(directory)
-        path = foldername+ "/"+filename
-        currentIm = face_recognition.load_image_file(path)
-        known_face_encoding.append(face_recognition.face_encodings(currentIm)[0])
-        name = ff_list[0]
-        known_face_names.append(name)
-     else:
-        continue
-     
+ratan_tata_image = face_recognition.load_image_file("photos/tata.jpg")
+ratan_tata_encoding = face_recognition.face_encodings(ratan_tata_image)[0]
+
+sadmona_image = face_recognition.load_image_file("photos/sadmona.jpg")
+sadmona_encoding = face_recognition.face_encodings(sadmona_image)[0]
+
+kaushal_image = face_recognition.load_image_file("photos/kaushal.jpg")
+kaushal_encoding = face_recognition.face_encodings(kaushal_image)[0]
+
+sreedevi_image = face_recognition.load_image_file("photos/sreedevi.jpg")
+sreedevi_encoding = face_recognition.face_encodings(sreedevi_image)[0]
+
+sahasra_image = face_recognition.load_image_file("photos/sahasra2.jpg")
+sahasra_encoding = face_recognition.face_encodings(sahasra_image)[0]
+
+
+
+
+known_face_encoding = [
+    jobs_encoding,
+    ratan_tata_encoding,
+    sadmona_encoding,
+    kaushal_encoding,
+    sreedevi_encoding,
+    sahasra_encoding,
+
+]
+
+known_face_names = [
+    "jobs",
+    "ratan tata",
+    "sadmona",
+    "kaushal",
+    "sreedevi",
+    "sahasra"
+    
+
+]
+
 students = known_face_names.copy()
 
 face_locations = []
@@ -71,4 +93,4 @@ while True:
 
 video_capture.release()
 cv2.destroyAllWindows()
-f.close()
+f.close()   
